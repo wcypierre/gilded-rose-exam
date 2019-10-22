@@ -74,3 +74,8 @@ above 50, however `Sulfuras` is a legendary item and as such its
 - Hint: Make use of `gilded_rose_spec.rb`.
 - When you are done, Please open a `pull request` from your `local branch` to your main `forked branch`.
 - Be prepared to talk about your approach and resulting implementation.
+
+### Fave Engineering Culture
+
+We just did a video and shared about our product and engineering culture you can [find it here](https://www.linkedin.com/posts/fave-group_wearefave-digitalproduct-product-activity-6592343555904245760-tlQm)
+
