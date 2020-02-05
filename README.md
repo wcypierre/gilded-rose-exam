@@ -13,10 +13,10 @@ If you have any question or clarification about the code. Please create an issue
 
 ### What do we expect?
 
-1. That you are able to fork a repo, create a branch and a pull request using git and github.
-2. That you can make multiple commits with a good commit message. Show us your best code and the steps you took not the final state of code.
-3. Unit tests are all passing (green) for each commit.
-4. New scenario is added with specs (unit tests) and is easy to read in code review.
+- That you are able to fork a repo, create a branch and a pull request using git and github.
+- That you can make multiple commits with a good commit message. Show us your best code and the steps you took not the final state of code.
+- Unit tests are all passing (green) for each commit.
+- New scenario is added with specs (unit tests) and is easy to read in code review.
 
 ### Instructions
 
