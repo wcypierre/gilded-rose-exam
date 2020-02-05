@@ -13,12 +13,19 @@ If you have any question or clarification about the code. Please create an issue
 
 ### What do we expect?
 
-1. Please make multiple commits with a good commit message. Do not show the final code change in a single commit. Show us your best code and the steps you took to refactor this.
-2. We dont like commit messages like "fix typo", "update code", "housekeeping", "cleanup code", use git fixup for this cases.
-3. Good clean code.
-4. Meaningful names.
-5. Unit tests are all passing (green).
-6. New scenario is added with specs (unit tests).
+1. That you are able to fork a repo, create a branch and a pull request using git and github.
+2. That you can make multiple commits with a good commit message. Show us your best code and the steps you took not the final state of code.
+3. Unit tests are all passing (green) for each commit.
+4. New scenario is added with specs (unit tests) and is easy to read in code review.
+
+### Instructions
+
+- After forking the repository, please create a feature branch.
+- Given the gilded-rose assignment below, update `gilded_rose#update_quality` to support `Conjured` items.
+- You can refactor the existing implementation of `gilded_rose.rb` but the tests should be green on every commit.
+- When you are done, Please open a `pull request` from YOUR `feature branch` to YOUR `master branch`.
+- Please come prepared to talk about your approach per commit.
+
 
 ## Story
 
@@ -66,14 +73,6 @@ ownership.
 Just for clarification, an item can never have its `quality` increase
 above 50, however `Sulfuras` is a legendary item and as such its
 `quality` is 80 and it never alters.
-
-### Instructions
-
-- Given the above requirements, update `#update_quality` in `gilded_rose.rb` to support `Conjured` items.
-- Please refactor the implementation of `gilded_rose.rb` and make it more readable and maintainable.
-- Hint: Make use of `gilded_rose_spec.rb`.
-- When you are done, Please open a `pull request` from your `local branch` to your main `forked branch`.
-- Be prepared to talk about your approach and resulting implementation.
 
 ### Fave Engineering Culture
 
