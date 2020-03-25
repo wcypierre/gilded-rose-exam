@@ -5,9 +5,7 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      if item.name == "Sulfuras, Hand of Ragnaros"
-        return
-      end
+      legendary_items = ["Sulfuras, Hand of Ragnaros"]
 
       if item.name == "Aged Brie"
         item = update_quality_aged_brie(item)
@@ -15,6 +13,8 @@ class GildedRose
         item = update_quality_backstage_passes(item)
       elsif item.name == "Conjured"
         item = update_quality_conjured(item)
+      elsif legendary_items.include? item.name
+        next
       else
         item = update_quality_normal(item)
       end
