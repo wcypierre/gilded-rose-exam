@@ -145,6 +145,28 @@ describe GildedRose do
       end
     end
 
+    context "when item name is 'Conjured'" do
+      let(:name) { 'Conjured' }
+
+      context "when sell in >= 0 (has not passed)" do
+        let(:initial_quality) { 10 }
+        let(:sell_in) { 20 }
+  
+        it "decrease quality by 2" do
+          expect(item.quality).to eq 8
+        end
+      end
+
+      context "when sell in < 0 (has passed)" do
+        let(:initial_quality) { 10 }
+        let(:initial_sell_in) { -1 }
+  
+        it "decrease quality by 4" do
+          expect(item.quality).to eq 6
+        end
+      end
+    end
+
     context "with multiple items" do
       let(:items) do
         [
