@@ -10,50 +10,84 @@ class GildedRose
       end
 
       if item.name == "Aged Brie"
-        if item.quality < 50
-          item.quality = item.quality + 1
-        end
+        item = update_quality_aged_brie(item)
       elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
-        if item.quality < 50
-          item.quality = item.quality + 1
-          
-          if item.sell_in < 11
-              item.quality = item.quality + 1
-          end
-
-          if item.sell_in < 6
-              item.quality = item.quality + 1
-          end
-        end
+        item = update_quality_backstage_passes(item)
+      elsif item.name == "Conjured"
+        item = update_quality_conjured(item)
       else
-        if item.quality > 0
-            item.quality = item.quality - 1
-
-            if item.name == "Conjured"
-              item.quality = item.quality - 1
-            end
-        end
+        item = update_quality_normal(item)
       end
+    end
+  end
+
+  private def update_quality_aged_brie(item)
+    if item.quality < 50
+      item.quality = item.quality + 1
 
       item.sell_in = item.sell_in - 1
 
       if item.sell_in < 0
-        if item.name == "Aged Brie"
-          if item.quality < 50
-            item.quality = item.quality + 1
-          end
-        elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
-          item.quality = item.quality - item.quality
-        else
-          if item.quality > 0
-            item.quality = item.quality - 1
-
-            if item.name == "Conjured"
-              item.quality = item.quality - 1
-            end
-          end
+        if item.quality < 50
+          item.quality = item.quality + 1
         end
       end
     end
+
+    return item
+  end
+
+  private def update_quality_backstage_passes(item)
+    if item.quality < 50
+      item.quality = item.quality + 1
+      
+      if item.sell_in < 11
+          item.quality = item.quality + 1
+      end
+
+      if item.sell_in < 6
+          item.quality = item.quality + 1
+      end
+    end
+
+    item.sell_in = item.sell_in - 1
+
+    if item.sell_in < 0
+      item.quality = item.quality - item.quality
+    end
+
+    return item
+  end
+
+  private def update_quality_conjured(item)
+    if item.quality >= 2
+      item.quality = item.quality - 2
+    end
+
+    item.sell_in = item.sell_in - 1
+
+    if item.sell_in < 0
+      if item.quality >= 2
+        item.quality = item.quality - 2
+      end
+    end
+
+    return item
+  end  
+
+  private def update_quality_normal(item)
+    if item.quality > 0
+      item.quality = item.quality - 1
+    end
+
+    item.sell_in = item.sell_in - 1
+
+    if item.sell_in < 0
+      if item.quality > 0
+        item.quality = item.quality - 1
+      end
+    end
+
+    return item
   end
 end
