@@ -1,3 +1,5 @@
+require_relative '../constants'
+
 class GildedRose
   def initialize(items)
     @items = items
@@ -5,13 +7,13 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      legendary_items = ["Sulfuras, Hand of Ragnaros"]
+      legendary_items = [Constants::GildedRoseItem::SULFURAS]
 
-      if item.name == "Aged Brie"
+      if item.name == Constants::GildedRoseItem::AGED_BRIE
         item = update_quality_aged_brie(item)
-      elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
+      elsif item.name == Constants::GildedRoseItem::BACKSTAGE_PASSES
         item = update_quality_backstage_passes(item)
-      elsif item.name == "Conjured"
+      elsif item.name == Constants::GildedRoseItem::CONJURED
         item = update_quality_conjured(item)
       elsif legendary_items.include? item.name
         next
